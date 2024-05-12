@@ -17,6 +17,7 @@ if(!dates.includes(currentDate)){
 }
 
 for(var i = 0; i < dates.length; i++){
+	if(texts[i] == '' || texts[i] == 'undefined') texts[i] = "..."
 	document.getElementById("body").innerHTML += "<button class='date'>" + dates[i] + "</button> <div class='dreams' contenteditable='true'>" + texts[i]  + "</div>"
 }
 
