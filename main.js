@@ -23,11 +23,11 @@ for(var i = 0; i < dates.length; i++){
 
 var d = document.getElementsByClassName("date");
 var scrollHeights = []
+var t = document.getElementsByClassName("dreams")
 
-setInterval(function(){
+function save(){
 	var s = ""
 	var dt = ""
-	var t = document.getElementsByClassName("dreams")
 	for(var i = 0; i < t.length; i++){
 		s += t[i].innerHTML
 		dt += dates[i]
@@ -46,9 +46,11 @@ setInterval(function(){
     		next.style.maxHeight = scrollHeights[i] + "px";
     	} 
     }
-}, 100)
+}
 
-
+for(var i = 0; i < t.length; i++){
+	t[i].oninput = save
+}
 
 for (var i = 0; i < d.length; i++) {
   d[i].addEventListener("click", function() {
